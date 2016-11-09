@@ -4,7 +4,7 @@ import firm.Employee;
 
 public class Volunteer extends Employee {
   public Volunteer(String employeeName) {
-    name = employeeName;
+    super(employeeName);
   }
 
   public float calculatePayment() {

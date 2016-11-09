@@ -4,7 +4,10 @@ public abstract class Employee implements Payable {
   protected String name;
   protected float rate;
   protected int workingHours;
-  protected int paymentDaysPeriod;
+
+  public Employee(String employeeName) {
+    name = employeeName;
+  }
 
   public void setWorkingHours(int workingHours) {
     this.workingHours = workingHours;

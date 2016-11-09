@@ -4,8 +4,10 @@ import firm.Employee;
 import firm.PaymentPeriod;
 
 public class FixedRateEmployee extends Employee {
+  protected int paymentDaysPeriod;
+
   public FixedRateEmployee(String employeeName, float employeeRate, PaymentPeriod employeePaymentPeriod) {
-    name = employeeName;
+    super(employeeName);
     rate = employeeRate;
     paymentDaysPeriod = employeePaymentPeriod.getWeeks() * WORKING_DAYS_PER_WEEK;
   }

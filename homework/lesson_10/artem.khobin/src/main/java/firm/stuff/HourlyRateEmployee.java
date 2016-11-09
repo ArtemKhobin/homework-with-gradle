@@ -4,7 +4,7 @@ import firm.Employee;
 
 public class HourlyRateEmployee extends Employee {
   public HourlyRateEmployee(String employeeName, float employeeRate) {
-    name = employeeName;
+    super(employeeName);
     rate = employeeRate;
   }
 
