@@ -2,7 +2,6 @@ package firm;
 
 public abstract class Employee implements Payable {
   protected String name;
-  protected float rate;
   protected int workingHours;
 
   public Employee(String employeeName) {

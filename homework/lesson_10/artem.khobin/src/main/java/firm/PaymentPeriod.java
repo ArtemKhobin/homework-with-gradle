@@ -1,18 +1,15 @@
 package firm;
 
 public enum PaymentPeriod {
-  WEEKLY, BIWEEKLY, MONTHLY;
+  WEEKLY(5), BIWEEKLY(10), MONTHLY(20);
 
-  public int getWeeks() {
-    switch (this) {
-      case WEEKLY:
-        return 1;
-      case BIWEEKLY:
-        return 2;
-      case MONTHLY:
-        return 4;
-      default:
-        return 0;
-    }
+  int daysNumber;
+
+  PaymentPeriod(int daysNumber) {
+    this.daysNumber = daysNumber;
+  }
+
+  public int getDaysNumber() {
+    return daysNumber;
   }
 }

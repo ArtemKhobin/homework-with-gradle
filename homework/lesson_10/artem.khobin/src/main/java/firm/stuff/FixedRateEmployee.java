@@ -5,11 +5,12 @@ import firm.PaymentPeriod;
 
 public class FixedRateEmployee extends Employee {
   protected int paymentDaysPeriod;
+  protected float dailyRate;
 
   public FixedRateEmployee(String employeeName, float employeeRate, PaymentPeriod employeePaymentPeriod) {
     super(employeeName);
-    rate = employeeRate;
-    paymentDaysPeriod = employeePaymentPeriod.getWeeks() * WORKING_DAYS_PER_WEEK;
+    dailyRate = employeeRate;
+    paymentDaysPeriod = employeePaymentPeriod.getDaysNumber();
   }
 
   public float calculatePayment() {
@@ -17,7 +18,7 @@ public class FixedRateEmployee extends Employee {
     if (fullWorkingDays < paymentDaysPeriod) {
       return 0;
     }
-    return (fullWorkingDays - (fullWorkingDays % paymentDaysPeriod)) * rate;
+    return (fullWorkingDays - (fullWorkingDays % paymentDaysPeriod)) * dailyRate;
   }
 
 }
