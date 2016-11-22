@@ -23,25 +23,16 @@ public class LinkedList<T> implements List<T> {
   }
 
   public T get(int index) {
-    T result = null;
-    if (index < size / 2 ) {
-      Iterator<T> iterator = iterator();
-      for (int i = 0; i <= index; i++) {
-        if (!iterator.hasNext()) {
-          break;
-        }
-        result = iterator.next();
+    Node<T> result = firstNode;
+
+    for (int i = 0; i < index; i++) {
+      if (result.next == null) {
+        break;
       }
-    } else {
-      ReverseIterator<T> iterator = reverseIterator();
-      for (int i = size - 1; i >= index; i--) {
-        if (!iterator.hasPrevious()) {
-          break;
-        }
-        result = iterator.previous();
-      }
+      result = result.next;
+
     }
-    return result;
+    return result.value;
   }
 
   public void remove(int index) {
@@ -93,7 +84,7 @@ public class LinkedList<T> implements List<T> {
     Node<T> prev;
   }
 
-  public class Iterator<T> implements algo.Iterator {
+  public class Iterator<T> implements algo.Iterator<T> {
     Node<T> current;
 
     public Iterator(Node<T> node) {
@@ -111,7 +102,7 @@ public class LinkedList<T> implements List<T> {
     }
   }
 
-  public class ReverseIterator<T> implements algo.ReverseIterator {
+  public class ReverseIterator<T> implements algo.ReverseIterator<T> {
     Node<T> current;
 
     public ReverseIterator(Node<T> node) {
