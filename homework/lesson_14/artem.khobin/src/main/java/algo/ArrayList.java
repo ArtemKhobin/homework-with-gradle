@@ -27,7 +27,7 @@ public class ArrayList<T> implements List<T> {
     }
 
     Object[] newList = new Object[list.length - 1];
-    for (int i = 0, j = 0; i < list.length - 1; i++, j++) {
+    for (int i = 0, j = 0; i < list.length; i++, j++) {
       if (i == index) {
         j--;
         continue;
