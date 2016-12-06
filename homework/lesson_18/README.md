@@ -18,4 +18,4 @@
   ```
 > Больше деталей об удаления элемента из BST можно узнать здесь [ algolist.net](http://www.algolist.net/Data_structures/Binary_search_tree/Removal)
 
-* Напишите итератор для BSTMap в прямом и обратном направлениях
+* Напишите итератор для обхода BSTMap в прямом и обратном направлениях
